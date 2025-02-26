@@ -345,6 +345,44 @@
 }
 
 
+.services-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.services-title hr {
+    width: 80%; /* Adjust width as needed */
+    margin: 10px auto; /* Center the line */
+    border: 1px solid #ccc; /* Adjust color and thickness as needed */
+}
+
+.services-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-container {
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.service-container h4 {
+    margin-bottom: 10px;
+    text-align: center; /* Center the headers */
+}
+
+.service-container img {
+    width: 80%;
+    max-height: 150px;
+    display: block; /* Make it a block element to center */
+    margin: 20px auto; /* Center the image */
+}
+
+
 
 
 
@@ -518,6 +556,16 @@
 	margin:0px;
 	width: 100%;
     }
+
+.services-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
         }
     </style>
 </head>
@@ -566,9 +614,9 @@
 		<br> Implantologie </p>
 		<p> Principaux traitement: </p>
 		 <ul>
-        <li>orthodontie de l’enfant : croissance et développement des mâchoires</li>
-        <li>Orthodontie de l’adolescent : alignement dentaire, croissance et développement des mâchoires</li>
-        <li>Orthodontie de l’adulte : alignement dentaire, orthodontie invisible par gouttières d’alignement, chirurgie orthognathique</li>
+        <li>Douleur dentaire: Accompagnement personnalisé pour répondre au maximum à vos besoins</li>
+        <li>Ré-alignement & positionement: l’esthétique de votre sourire</li>
+        <li>Implant : l’implant à la phase prothétique</li>
     </ul>
 
             </div>
@@ -576,7 +624,7 @@
         <div class="profile">
             <img src="annesophie.jpg" alt="Einstein">
             <div class="profile-text">
-                <h2>Dr. Anne Sophie Casal</h2>
+                <h2>Dr. Anne Sophie Casals</h2>
                 <p>Docteur en chirurgie dentaire <br> pratique limitée à l'orthodontie</p>
 		 <p> Principaux traitement: </p>
 		 <ul>
@@ -597,6 +645,7 @@
         <div class="offices-content">
             <div class="carousel-container">
                 <div class="carousel" id="office-carousel">
+		    <img src="camera.jpg" alt="Caméra">
                     <img src="office_1.jpg" alt="Office 1">
                     <img src="office_2.jpg" alt="Office 2">
                 </div>
@@ -617,11 +666,33 @@ En effet, les dernières recommandations scientifiques sont respectées. Les rè
             </div>
         </div>
     </section>
-
-    <section class="services">
-        <h2>Our Services</h2>
-        <p>List of services offered, along with your references.</p>
-    </section>
+<section class="services">
+    <div class="services-title">
+        <h1>Notre pratique</h1>
+        <hr>
+    </div>
+    <div class="services-content">
+   <div class="service-container">
+            <h4 class="centered-header">Soins général </h4>
+	    <img src="sample_dent.jpg" alt="Sample Dent">
+            <p>La pratique orientée vers L’orthodontie enfant et adulte du Dr Casals vise à corriger le positionnement des dents et des mâchoires pour améliorer la santé bucco-dentaire et assurer un sourire harmonieux.
+<br><br>
+            Les soins peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs (comme l’arrêt de la succion du pouce ou de la tétine), se poursuivre à l’adolescence avec des corrections orthodontiques, et s’étendre à l’âge adulte pour des raisons esthétiques ou fonctionnelles.</p>
+            
+        </div>
+        <div class="service-container">
+            <h4 class="centered-header">Orthodontie</h4>
+	    <img src="sample_ortho.jpg" alt="Sample Ortho">
+            <p>La pratique orientée vers L’orthodontie enfant et adulte du Dr Casals vise à corriger le positionnement des dents et des mâchoires pour améliorer la santé bucco-dentaire et assurer un sourire harmonieux.
+<br><br>
+            Les soins peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs (comme l’arrêt de la succion du pouce ou de la tétine), se poursuivre à l’adolescence avec des corrections orthodontiques, et s’étendre à l’âge adulte pour des raisons esthétiques ou fonctionnelles.
+<br><br>
+            L’objectif est d’améliorer les fonctions de ventilation et de mastication tout en préservant l’esthétique du sourire. Pour cela, différents types d’appareils peuvent être utilisés (amovibles, semi-amovibles, fixes) et, dans certains cas, un recours à la chirurgie maxillo-faciale peut être envisagé.</p>
+            
+        </div>
+     
+    </div>
+</section>
 
     <footer>
     <div class="footer-content">
