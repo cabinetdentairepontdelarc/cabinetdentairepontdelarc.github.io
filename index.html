@@ -280,18 +280,21 @@
 }
 
 .profile {
-    width: 45%; /* Adjust as needed */
+    width: 50%; /* Adjust as needed */
     margin-bottom: 20px; /* Add vertical space between profiles */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.profile img {
-    max-width: 50%;
-    height: auto;
-}
 
+.profile img {
+    max-width: 70%;
+    height: 350px;
+}
+.profile-text {
+    max-width: 45%; /* Ensures the text doesn't exceed the image width */
+}
 
 
 
@@ -364,11 +367,13 @@
 
           .entrance-text p {
                 display: flex;
-                order: 3;
+		visibility: hidden;
+		position: absolute;
+                order: 4;
             }
 
           .entrance-text a {
-                order: 4;
+                order: 3;
                 display: block;
             }
 
@@ -449,6 +454,13 @@
         width: 90%; /* Make profiles take up more width on smaller screens */
     }
 
+	.profile img{
+        height: 300px; /* Make profiles take up more width on smaller screens */
+    }
+
+	.profile-text {
+    max-width: 60%; /* Ensures the text doesn't exceed the image width */
+}
 .presentation-content {
 
     height: auto;
@@ -466,7 +478,7 @@
         </div>
         <nav class="menu" id="myMenu">
             <a href="#">Notre cabinet</a>
-            <a href="#">Notre pratique</a>
+            <a href="#">A propos</a>
             <a href="#">Nous contacter</a>
         </nav>
         <h4>Cabinet dentaire du pont de l'arc</h4>
@@ -481,8 +493,8 @@
 	    <hr>
             <p>Cabinet multidisciplinaire pour prendre en charge l'ensemble de vos problématiques </p>
 	    <hr>
-	   <h4> Vote sourire, notre pratique. </h4>
-            <a href="https://www.doctolib.fr/" target="_blank"><button>Réservez maintenant</button></a>
+	   <h4> Votre sourire, notre pratique. </h4>
+            <a href="https://www.doctolib.fr/" target="_blank"><button>Prendre rendez vous</button></a>
         </div>
     </div>
 </section>
@@ -494,17 +506,31 @@
     </div>
     <div class="presentation-content">
         <div class="profile">
-            <img src="einstein.jpg" alt="Einstein">
+            <img src="victoireR.jpg" alt="Einstein">
             <div class="profile-text">
-                <h2>Victoire Rochet</h2>
-                <p>Dentiste généraliste</p>
+                <h2>Dr. Victoire Rochet</h2>
+                <p>Chirurgien Dentiste
+		<br> Implantologie </p>
+		<p> Principaux traitement: </p>
+		 <ul>
+        <li>orthodontie de l’enfant : croissance et développement des mâchoires</li>
+        <li>Orthodontie de l’adolescent : alignement dentaire, croissance et développement des mâchoires</li>
+        <li>Orthodontie de l’adulte : alignement dentaire, orthodontie invisible par gouttières d’alignement, chirurgie orthognathique</li>
+    </ul>
+
             </div>
         </div>
         <div class="profile">
-            <img src="einstein.jpg" alt="Einstein">
+            <img src="annesophie.jpg" alt="Einstein">
             <div class="profile-text">
-                <h2>Anne Sophie Casal</h2>
-                <p>Orthodentiste</p>
+                <h2>Dr. Anne Sophie Casal</h2>
+                <p>Docteur en chirurgie dentaire <br> pratique limitée à l'orthodontie</p>
+		 <p> Principaux traitement: </p>
+		 <ul>
+        <li>orthodontie de l’enfant : croissance et développement des mâchoires</li>
+        <li>Orthodontie de l’adolescent : alignement dentaire, croissance et développement des mâchoires</li>
+        <li>Orthodontie de l’adulte : alignement dentaire, orthodontie invisible par gouttières d’alignement, chirurgie orthognathique</li>
+    </ul>
             </div>
         </div>
     </div>
