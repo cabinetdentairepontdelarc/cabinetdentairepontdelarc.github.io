@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabinet dentaire pont de l'arc</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" >
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         /* General Styles */
         body {
@@ -118,6 +120,22 @@
 
 .footer-content h3 {
     margin-bottom: 10px;
+}
+
+#map {
+    height: 300px;
+    width: 400px;
+    margin: 10px auto; /* Center the map */
+}
+
+.map-container {
+    display: flex;
+    align-items: center; /* Vertically align map and parking info */
+}
+
+.parking-info {
+    margin-left: 20px; /* Add space between map and parking info */
+text-align: left;
 }
 
 .contact-info {
@@ -382,7 +400,39 @@
     margin: 20px auto; /* Center the image */
 }
 
+.folder {
+    margin-bottom: 10px;
+}
 
+.folder-title {
+    background-color: #eee; /* Light background for the title */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* To position the arrow */
+}
+
+.folder-title::after {
+    content: "\25BC"; /* Downward arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease; /* Add smooth transition for arrow */
+}
+
+.folder-content {
+    display: none; /* Initially hide the content */
+    margin-top: 10px;
+}
+
+.folder.active .folder-title::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow upwards */
+}
+
+.folder.active .folder-content {
+    display: block; /* Show the content */
+}
 
 
 
@@ -566,6 +616,15 @@
         width: 90%;
         margin-bottom: 20px;
     }
+
+  .map-container {
+        flex-direction: column; /* Stack map and parking info vertically */
+    }
+
+    .parking-info {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 10px; /* Add top margin */
+    }
         }
     </style>
 </head>
@@ -578,15 +637,17 @@
             <div class="hamburger-line"></div>
         </div>
         <nav class="menu" id="myMenu">
-            <a href="#">Notre cabinet</a>
-            <a href="#">A propos</a>
-            <a href="#">Nous contacter</a>
-        </nav>
+    <a href="#entrance">Accueil</a>
+    <a href="#presentation">Présentation</a>
+    <a href="#offices">Notre cabinet</a>
+    <a href="#services">Nos Services</a>
+    <a href="#contact">Nous contacter</a>
+</nav>
         <h4>Cabinet dentaire du pont de l'arc</h4>
         <a href="index.html"><img class="logo" src="logo.png" alt="Logo"></a>
     </header>
 
-    <section class="entrance">
+    <section id="entrance" class="entrance">
     <div class="entrance-content">
         <img src="victoire.jpg" alt="Entrance">
         <div class="entrance-text">
@@ -600,7 +661,7 @@
     </div>
 </section>
 
-<section class="presentation">
+<section id="presentation" class="presentation">
 	 <div class="presentation-title">
         <h1>Notre équipe</h1>
         <hr>
@@ -610,13 +671,13 @@
             <img src="victoireR.jpg" alt="Einstein">
             <div class="profile-text">
                 <h2>Dr. Victoire Rochet</h2>
-                <p>Chirurgien Dentiste
-		<br> Implantologie </p>
+                <p>Chirurgien dentiste
+		<br> Implantologie  </p>
 		<p> Principaux traitement: </p>
 		 <ul>
         <li>Douleur dentaire: Accompagnement personnalisé pour répondre au maximum à vos besoins</li>
-        <li>Ré-alignement & positionement: l’esthétique de votre sourire</li>
-        <li>Implant : l’implant à la phase prothétique</li>
+        <li>L’esthétique de votre sourire : éclaircissement et harmonie </li>
+        <li>⁠Implantologie : de la planification à la phase prothétique </li>
     </ul>
 
             </div>
@@ -637,7 +698,7 @@
     </div>
 </section>
 
-    <section class="offices">
+    <section id="offices" class="offices">
 	<div class="offices-title"> <div class="offices-title-text">
         <h1>Notre cabinet</h1>
         <hr> </div>
@@ -666,61 +727,120 @@ En effet, les dernières recommandations scientifiques sont respectées. Les rè
             </div>
         </div>
     </section>
-<section class="services">
+
+
+<section id="services" class="services">
     <div class="services-title">
         <h1>Notre pratique</h1>
         <hr>
     </div>
     <div class="services-content">
    <div class="service-container">
-            <h4 class="centered-header">Soins général </h4>
-	    <img src="sample_dent.jpg" alt="Sample Dent">
-            <p>La pratique orientée vers L’orthodontie enfant et adulte du Dr Casals vise à corriger le positionnement des dents et des mâchoires pour améliorer la santé bucco-dentaire et assurer un sourire harmonieux.
-<br><br>
-            Les soins peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs (comme l’arrêt de la succion du pouce ou de la tétine), se poursuivre à l’adolescence avec des corrections orthodontiques, et s’étendre à l’âge adulte pour des raisons esthétiques ou fonctionnelles.</p>
-            
-        </div>
-        <div class="service-container">
-            <h4 class="centered-header">Orthodontie</h4>
-	    <img src="sample_ortho.jpg" alt="Sample Ortho">
-            <p>La pratique orientée vers L’orthodontie enfant et adulte du Dr Casals vise à corriger le positionnement des dents et des mâchoires pour améliorer la santé bucco-dentaire et assurer un sourire harmonieux.
-<br><br>
-            Les soins peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs (comme l’arrêt de la succion du pouce ou de la tétine), se poursuivre à l’adolescence avec des corrections orthodontiques, et s’étendre à l’âge adulte pour des raisons esthétiques ou fonctionnelles.
-<br><br>
-            L’objectif est d’améliorer les fonctions de ventilation et de mastication tout en préservant l’esthétique du sourire. Pour cela, différents types d’appareils peuvent être utilisés (amovibles, semi-amovibles, fixes) et, dans certains cas, un recours à la chirurgie maxillo-faciale peut être envisagé.</p>
-            
-        </div>
+    <h4 class="centered-header">Orthodontie</h4>
+<img src="sample_ortho.jpg" alt="Sample Ortho">
+    <div class="folder">
+        <h4 class="folder-title">Orthodontie pour enfants</h4>
+        <p class="folder-content">Les soins peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs (comme l’arrêt de la succion du pouce ou de la tétine)</p>
+    </div>
+    <div class="folder">
+        <h4 class="folder-title">Orthodontie de l'adolescent</h4>
+        <p class="folder-content">, se poursuivre à l’adolescence avec des corrections orthodontiques,
+L’objectif est d’améliorer les fonctions de ventilation et de mastication tout en préservant l’esthétique du sourire. Pour cela, différents types d’appareils peuvent être utilisés (amovibles, semi-amovibles, fixes) et, dans certains cas, un recours à la chirurgie maxillo-faciale peut être envisagé.</p>
+    </div>
+    <div class="folder">
+        <h4 class="folder-title">Orthodontie pour adultes</h4>
+        <p class="folder-content"> et s’étendre à l’âge adulte pour des raisons esthétiques ou fonctionnelles.</p>
+    </div>
+    
+</div>
+<div class="service-container">
+    <h4 class="centered-header">Dentiste générale</h4>
+  <img src="sample_dent.jpg" alt="Sample Dent">
+    <div class="folder">
+        <h4 class="folder-title">Urgences dentaires </h4>
+        <p class="folder-content"><b> Douleurs et infections: </b>
+Si vous avez mal au froid, au chaud, en mangeant, ou si vous pensez avoir un abcès (gonflement douloureux), contactez-nous vite ! Nous ferons tout pour vous soulager. <br>
+<b>Traumatismes (chutes, coups) : </b>
+En cas de choc sur les dents, appelez-nous immédiatement.<br>
+<b> Dent expulsée : </b>
+Récupérez la dent sans la nettoyer.
+Conservez-la dans du sérum physiologique, du lait, ou votre salive.
+Venez nous voir le plus vite possible, on essaiera de la remettre en place !<br> <br>
+Plus vite on agit, meilleures sont les chances de guérison !</p>
+    </div>
+    <div class="folder">
+        <h4 class="folder-title">Prothèses</h4>
+        <p class="folder-content"><b> Fabrication locale : </b>
+Nous travaillons avec des prothésistes de proximité, ce qui permet de faire les prothèses de qualité rapidement. <br>
+<b> Couronnes : </b>
+Pour les dents très abîmées, nous pouvons appliqué une « coque » par-dessus pour les renforcer et les rendre plus ésthétique.<br>
+<b> Inlays/onlays :</b>
+Ce sont des  pièces faites sur mesure pour réparer les parties abîmées des dents, comme des « patchs ».<br>
+<b>Prothèses amovibles (dentiers) :</b>
+Si vous avez perdu des dents, nous pouvons vous proposer un appareil amovible pour les remplacer, en attendant une solution plus durable.<br></p>
+    </div>
+<div class="folder">
+        <h4 class="folder-title">Implantologie </h4>
+        <p class="folder-content"><b> Esthétique </b>
+Nous travaillons avec des prothésistes de proximité, ce qui permet de faire les prothèses de qualité rapidement. <br>
+</p>
+    </div>
+<div class="folder">
+        <h4 class="folder-title">Éclaircissement  </h4>
+        <p class="folder-content"><b> Esthétique </b>
+Nous travaillons avec des prothésistes de proximité, ce qui permet de faire les prothèses de qualité rapidement. <br>
+</p>
+    </div>
+
+  
+</div>
      
     </div>
 </section>
 
-    <footer>
+<footer id="contact">
     <div class="footer-content">
         <h3>Contactez nous</h3>
         <div class="contact-info">
-	     <div class="contact-item">
+            <div class="contact-item">
                 <img src="tel.png" alt="Phone">
                 <p>Prochainement</p>
             </div>
-	   <div class="contact-item">
+            <div class="contact-item">
                 <img src="location.png" alt="Address">
                 <p>45 rue Pascal Fieschi, 13090</p>
             </div>
-	    <div class="contact-item">
+            <div class="contact-item">
                 <img src="mail.png" alt="Email">
                 <p>cabinetdentairepontdelarc@gmail.com</p>
             </div>
-	    <div class="contact-item">
+            <div class="contact-item">
                 <img src="inst.png" alt="Email">
                 <p>Prochainement</p>
             </div>
-            
         </div>
+    </div>
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="parking-info">
+            <h4>Ou se garer ?</h4>
+            <ul>
+                <li>Devant le cabinet nombreuses places gratuites</li>
+                <li>Places devant l’optique pont de l’arc au 124 avenue Fortuné Ferrini</li>
+                <li>Parking de la mairie au 75 route des milles Aix en Provence : deux parkings un payant et un gratuit</li>
+                <li>Parking covoiturage 2 avenue arc de meyran: attention seulement le deuxième parking sur la gauche est gratuit</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2025 Cabinet Dentaire du Pont de l'Arc</p>
     </div>
 </footer>
 
 
     <script>
+
+
         // JavaScript for Carousel
         let currentSlide = 0;
         const carousel = document.getElementById('office-carousel');
@@ -746,6 +866,42 @@ En effet, les dernières recommandations scientifiques sont respectées. Les rè
             hamburger.classList.toggle('active');
             menu.classList.toggle('active');
         }
+
+const folderTitles = document.querySelectorAll('.folder-title');
+
+folderTitles.forEach(title => {
+    title.addEventListener('click', () => {
+        const folder = title.parentElement;
+        folder.classList.toggle('active');
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+var map = L.map('map', {
+    center: [43.50960, 5.43972],
+    zoom: 15
+});
+
+
+// Add the OpenStreetMap tile layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Add a marker to the map
+L.marker([43.50960, 5.43972]).addTo(map) // Replace with actual coordinates
+    .bindPopup('45 rue Pascal Fieschi, 13090')
+    .openPopup();
+});
     </script>
 </body>
 </html>
