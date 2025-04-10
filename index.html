@@ -9,27 +9,29 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         /* General Styles */
-        body {
-            font-family: 'Buenard', serif;
-            color: #463f3a;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f3f4;
-        }
+    body {
+        font-family: 'Buenard', serif;
+        color: #463f3a;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f3f4;
+    }
 
-P { line-height:1.2}
+    P { line-height:1.2}
 
 /* Entrance Section */
 .entrance-content {
     position: relative; /* To position the text over the image */
     padding-top: 5%;
+}
 
-}.entrance-content img {
+.entrance-content img {
     width: 100%; /* Make image cover full width */
     height: 550px;
     margin: 0; /* Remove any margins */
+}
 
-}.entrance-text {
+.entrance-text {
     position: absolute;
     top: 55%;
     left: 50%;
@@ -42,12 +44,17 @@ P { line-height:1.2}
    font-size: 20px;
 }
 
-	.entrance-text hr {
+.entrance-text hr {
     margin: 10px 0; /* Adjust spacing around the lines */
     border: 1px solid black; /* Adjust color and thickness as needed */
     width: 10%;
     transform: translate(-50%, -50%); /* Center the text */
     margin-left: 50%;
+    
+}
+
+.entrance-text button {
+    width: 400px;
     
 }
 
@@ -63,50 +70,50 @@ P { line-height:1.2}
     border: 1px solid #ccc; /* Adjust color and thickness as needed */
 }
 
-      .offices-content {
-            display: flex;
-            align-items: center;
-        }
-
-      .offices-text {
-            display: flex;
-            max-width: 40%;
-            flex-direction: column;
-            align-items: center;
-        }
-
-      .offices-text h4 {
-            display: flex;
-            text-align: left;
-            order: 1;
-            padding: 0px;
-        }
-
-		.offices-text hr {
-        margin: 10px 0; /* Adjust spacing around the lines */
-        border: 1px solid black; /* Adjust color and thickness as needed */
-        width: 10%;
-        transform: translate(-50%, -50%); /* Center the text */
-        order:2;
+.offices-content {
+    display: flex;
+    align-items: center;
 }
 
-      .offices-text p {
-            order: 3;
-            display: flex;
-            text-align: left;
-            padding: 0px;
-        }
+.offices-text {
+    display: flex;
+    max-width: 40%;
+    flex-direction: column;
+    align-items: center;
+}
 
-        /* Footer */
-        footer {
-            background-color: #f5f3f4;
-            padding: 0px;
-            text-align: center;
-	    border: 1px solid;
-	    border-color: black #f5f3f4 #f5f3f4 ;
-        }
+.offices-text h4 {
+    display: flex;
+    text-align: left;
+    order: 1;
+    padding: 0px;
+}
 
-	.footer-content {
+.offices-text hr {
+margin: 10px 0; /* Adjust spacing around the lines */
+border: 1px solid black; /* Adjust color and thickness as needed */
+width: 10%;
+transform: translate(-50%, -50%); /* Center the text */
+order:2;
+}
+
+.offices-text p {
+    order: 3;
+    display: flex;
+    text-align: left;
+    padding: 0px;
+}
+
+/* Footer */
+footer {
+    background-color: #f5f3f4;
+    padding: 0px;
+    text-align: center;
+    border: 1px solid;
+    border-color: black #f5f3f4 #f5f3f4 ;
+}
+
+.footer-content {
     text-align: center;
 }
 
@@ -127,7 +134,7 @@ P { line-height:1.2}
 
 .parking-info {
     margin-left: 20px; /* Add space between map and parking info */
-text-align: left;
+    text-align: left;
 }
 
 .contact-info {
@@ -148,177 +155,175 @@ text-align: left;
     height: 32px;
 }
 
-        /* Button Styling */
-        button {
-            background-color: white;
-            color: #333;
-            border-color: #8a817c;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 0;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #b7b7a4;
-        }
-
-        /* Link Styling */
-        a {
-            text-decoration: none;
-        }
-
-        /* Carousel Styles */
-      .carousel-container {
-            position: relative;
-            overflow: hidden;
-            width: 45%;
-            margin: 2%
-        }
-
-      .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-      .carousel img {
-        height: 60vh; /* 75% of the viewport height */
-  width: auto;  /* Maintain aspect ratio */
-  max-width: none; /* Override any existing max-width */
-  min-width: unset; /* Override any existing min-width */
-  object-fit: cover; /* Ensure images cover the area */
-  display: inline-block;
-  margin-left: 3%;
-  margin-right: 2%;
-}
-        
-
-      .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* Center vertically */
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 3px 3px;
+/* Button Styling */
+button {
+    background-color: white;
+    color: #333;
+    border-color: #8a817c;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
     cursor: pointer;
-    z-index: 1;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+
+button:hover {
+    background-color: #b7b7a4;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 40%;
+    margin: 2%
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    height: 60vh; /* 75% of the viewport height */
+    width: auto;  /* Maintain aspect ratio */
+    max-width: none; /* Override any existing max-width */
+    min-width: unset; /* Override any existing min-width */
+    object-fit: cover; /* Ensure images cover the area */
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 2%;
+}
+
+
+.carousel-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%); /* Center vertically */
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 3px 3px;
+cursor: pointer;
+z-index: 1;
+}   
 
 .carousel-button.prev {
-    left: 20px; /* Position on the left */
-    font-size: 24px;
+left: 20px; /* Position on the left */
+font-size: 24px;
 }
 
 .carousel-button.next {
-    right: 15px; /* Position on the right */
-    font-size: 24px;
+right: 15px; /* Position on the right */
+font-size: 24px;
 }
 
-        /* Header Styles */
-        header {
-            color: black;
-            padding: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-	    position: fixed; /* Keep the header fixed */
-  	    top: 0;
-    	    left: 0;
-   	    width: 100%; /* Make it span the full width */
-    	    z-index: 100; /* Ensure it's on top of other elements */
-	    background-color: #f5f3f4;
-	    border: 1px solid;
-	    border-color:  #f5f3f4 #f5f3f4 black;
-        }
+/* Header Styles */
+header {
+    color: black;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Keep the header fixed */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make it span the full width */
+    z-index: 100; /* Ensure it's on top of other elements */
+    background-color: #f5f3f4;
+    border: 1px solid;
+    border-color:  #f5f3f4 #f5f3f4 black;
+}
 
-        header .logo {
-            max-height: 60px;
-            margin-right: 20px;
-            margin-left: 20px;
-            border-radius: 5px;
-            padding-right: 3%;
-            padding-left: 3%;
-        }
+header .logo {
+    max-height: 60px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    padding-right: 3%;
+    padding-left: 3%;
+}
 
-        header .logo:hover {
-            background-color: #978f89;
-        }
+header .logo:hover {
+    background-color: #978f89;
+}
 
-        header h4 {
-            flex-grow: 1;
-            text-align: right;
-            opacity: 0; /* Initially hide the title */
-            animation: slideInFromRight 2s ease forwards; /* Apply animation */
-	    margin:0px;
-	    color: #8E402A;
-        }
+header h4 {
+    flex-grow: 1;
+    text-align: right;
+    opacity: 0; /* Initially hide the title */
+    animation: slideInFromRight 2s ease forwards; /* Apply animation */
+    margin:0px;
+    color: #8E402A;
+}
 
-        /* Hamburger Menu Styles */
-      .hamburger {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            margin-left: 20px;
-        }
+/* Hamburger Menu Styles */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
 
-      .hamburger-line {
-            width: 25px;
-            height: 3px;
-            background-color: black;
-            margin: 3px 0;
-            transition: 0.4s;
-        }
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.4s;
+}
 
-      .menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-	    margin:1px;
-            top: 70px;
-            left: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-        }
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+margin:1px;
+    top: 70px;
+    left: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
 
-      .menu a {
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #333;
-            display: block;
-        }
+.menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
 
-      .menu a:hover {
-            background-color: #b7b7a4;
-        }
+.menu a:hover {
+    background-color: #b7b7a4;
+}
 
-        /* Active Class for Hamburger Menu */
-      .hamburger.active .hamburger-line:nth-child(1) {
-            width: 35px;
-            transform: rotate(50deg) translate(5px, 5px);
-        }
+/* Active Class for Hamburger Menu */
+.hamburger.active .hamburger-line:nth-child(1) {
+    width: 35px;
+    transform: rotate(50deg) translate(5px, 5px);
+}
 
-      .hamburger.active .hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
 
-      .hamburger.active .hamburger-line:nth-child(3) {
-            width: 35px;
-            transform: rotate(-50deg) translate(5px, -5px);
-        }
+.hamburger.active .hamburger-line:nth-child(3) {
+    width: 35px;
+    transform: rotate(-50deg) translate(5px, -5px);
+}
 
-      .menu.active {
-            display: flex;
-        }
-
-	/* ... (rest of your CSS) ... */
+.menu.active {
+    display: flex;
+}
 
 .presentation {
     width: 100%;
@@ -517,6 +522,7 @@ text-align: left;
 
           .entrance-text button {
                 padding: 10px;
+                width:300px;
             }
 
           .entrance img {
@@ -578,7 +584,7 @@ text-align: left;
             }
 
          .carousel-container {
-            width: 65%;
+            width: 85%;
         }
 
         .profile {
@@ -655,7 +661,8 @@ text-align: left;
             <p>Cabinet multidisciplinaire pour prendre en charge l'ensemble de vos problématiques </p>
 	    <hr>
 	   <h4> Votre sourire, notre pratique. </h4>
-            <a href="https://www.doctolib.fr/" target="_blank"><button>Prendre rendez vous</button></a>
+            <a href="https://www.doctolib.fr/dentiste/aix-en-provence/victoir-rochet/" target="_blank"><button>Prendre rendez vous dentaire</button></a>
+            <a href="https://www.doctolib.fr/dentiste/marseille/anne-sophie-casals" target="_blank"><button>Prendre rendez vous orthodontie </button></a>
         </div>
     </div>
 </section>
@@ -668,9 +675,9 @@ text-align: left;
         <div class="offices-content">
             <div class="carousel-container">
                 <div class="carousel" id="office-carousel">
+                    <img src="Carrousel_6.jpg" alt="carousel">
 		            <img src="Carrousel_2.jpg" alt="carousel">
                     <img src="Carrousel_1.jpg" alt="carousel">
-                    <img src="Carrousel_6.jpg" alt="carousel">
                 </div>
                 <button class="carousel-button prev" onclick="prevSlide()">&#9664;</button>
 <button class="carousel-button next" onclick="nextSlide()">&#9654;</button>
@@ -678,13 +685,13 @@ text-align: left;
             <div class="offices-text">
                 <h4>Le cabinet est équipé des dernières technologies afin de vous proposer des soins de qualité.</h4>
 		<hr>
-                <p>
-En effet, les dernières recommandations scientifiques sont respectées. Les règles d’hygiène et asepsie sont notre priorité.
-<br><br> Le cabinet est équipé :<br> 
-  - D’une caméra intra orale 3D<br> 
-- Radiographie et cone beam Low dose<br>
-	- Chaîne de stérilisation de dernière génération<br>
- </p>
+        <p>
+            En effet, les dernières recommandations scientifiques sont respectées. Les règles d’hygiène et d’asepsie sont notre priorité 
+            <br><br> Le cabinet est équipé :<br> 
+            - D’une caméra intra orale 3D<br> 
+            - Radiographie et cone beam Low dose<br>
+	        - Chaîne de stérilisation de dernière génération<br>
+        </p>
 
             </div>
         </div>
@@ -724,7 +731,7 @@ En effet, les dernières recommandations scientifiques sont respectées. Les rè
            <li>Thèse sur les Mini-vis de traction orthodontique</li>
            
        </ul>
-       <a href="https://www.doctolib.fr/dentiste/marseille/anne-sophie-casals?pid=practice-50493" target="_blank"><button>Prendre rendez vous</button></a>
+       <a href="https://www.doctolib.fr/dentiste/marseille/anne-sophie-casals" target="_blank"><button>Prendre rendez vous</button></a>
                </div>
            </div>
        </div>
@@ -738,7 +745,7 @@ En effet, les dernières recommandations scientifiques sont respectées. Les rè
     <div class="services-content">
    <div class="service-container">
     <h4 class="centered-header">Orthodontie</h4>
-<img src="sample_ortho.jpg" alt="Sample Ortho">
+<img src="dentaire_ortho.jpg" alt="Sample Ortho">
     <div class="folder">
         <h4 class="folder-title">Orthodontie pour enfants</h4>
         <p class="folder-content"><b>Croissance et développement des mâchoires:</b> Les traitements peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs.<br><br>
@@ -760,7 +767,7 @@ L’orthodontie chez l’adulte permet de corriger l’alignement dentaire pour 
 </div>
 <div class="service-container">
     <h4 class="centered-header">Dentiste générale</h4>
-  <img src="sample_dent.jpg" alt="Sample Dent">
+  <img src="dentaire_Generale.png" alt="Sample Dent">
     <div class="folder">
         <h4 class="folder-title">Urgences dentaires </h4>
         <p class="folder-content"><b> Douleurs et infections: </b>
@@ -902,11 +909,22 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Add a marker to the map
-L.marker([43.50960, 5.43972]).addTo(map) // Replace with actual coordinates
-    .bindPopup('45 rue Pascal Fieschi, 13090')
+// Add a marker to the map - actual cabinet
+L.marker([43.50960, 5.43972]).addTo(map) 
+    .bindPopup('Cabinet: 45 rue Pascal Fieschi')
     .openPopup();
+
+// Add a marker to the map - parking
+L.marker([43.51036560652942, 5.440912534962725]).addTo(map) 
+    .bindPopup('Parking: Av. Fortuné Ferrini')
+
+L.marker([43.5095140919429, 5.438699710852258]).addTo(map) 
+    .bindPopup('Parking: Route des Milles')
+
+L.marker([43.51157822814869, 5.445576810852399]).addTo(map) 
+    .bindPopup('Parking: Route des Milles')
 });
+
     </script>
 </body>
 </html>
