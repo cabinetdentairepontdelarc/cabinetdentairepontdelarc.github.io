@@ -190,7 +190,7 @@ a {
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 .carousel img {
@@ -678,6 +678,7 @@ margin:1px;
                     <img src="Carrousel_6.jpg" alt="carousel">
 		            <img src="Carrousel_2.jpg" alt="carousel">
                     <img src="Carrousel_1.jpg" alt="carousel">
+                    <img src="Carrousel_7.jpg" alt="carousel">
                 </div>
                 <button class="carousel-button prev" onclick="prevSlide()">&#9664;</button>
 <button class="carousel-button next" onclick="nextSlide()">&#9654;</button>
@@ -767,7 +768,7 @@ L’orthodontie chez l’adulte permet de corriger l’alignement dentaire pour 
 </div>
 <div class="service-container">
     <h4 class="centered-header">Dentiste générale</h4>
-  <img src="dentaire_Generale.png" alt="Sample Dent">
+  <img src="dentaire_Generale.jpg" alt="Sample Dent">
     <div class="folder">
         <h4 class="folder-title">Urgences dentaires </h4>
         <p class="folder-content"><b> Douleurs et infections: </b>
@@ -853,23 +854,39 @@ Nous travaillons avec des prothésistes de proximité, ce qui permet de faire le
     <script>
 
 
-        // JavaScript for Carousel
-        let currentSlide = 0;
-        const carousel = document.getElementById('office-carousel');
-        const images = carousel.querySelectorAll('img');
+// JavaScript for Carousel
+    let currentSlide = 0;
+    const carousel = document.getElementById('office-carousel');
+    const images = carousel.querySelectorAll('img');
+    let autoPlayInterval; // Variable to store the interval ID
 
-        function showSlide(n) {
-            currentSlide = (n + images.length) % images.length;
-            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
+    function showSlide(n) {
+        currentSlide = (n + images.length) % images.length;
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds (adjust as needed)
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Start autoplay when the page loads
+    startAutoPlay();
+
+    // Optional: Pause autoplay on hover
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
 
         // JavaScript for Hamburger Menu
         function toggleMenu() {
