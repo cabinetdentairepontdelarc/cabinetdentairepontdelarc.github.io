@@ -27,7 +27,7 @@
 
 .entrance-content img {
     width: 100%; /* Make image cover full width */
-    height: 550px;
+    height: 600px;
     margin: 0; /* Remove any margins */
 }
 
@@ -439,7 +439,26 @@ margin:1px;
     display: block; /* Show the content */
 }
 
+.video-presentation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
 
+.video-container {
+    width: 60%;
+    max-width: 633px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
         /* Animation for Title */
         @keyframes slideInFromRight {
@@ -473,7 +492,12 @@ margin:1px;
         }
 
         @media (max-width: 768px) { /* Styles for smaller screens */
-          .entrance-content {
+            .video-container {
+        width: 95%; /* Take up more width on mobile */
+        height: 250px;
+            }
+
+            .entrance-content {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
@@ -526,7 +550,7 @@ margin:1px;
             }
 
           .entrance img {
-                max-height: 350px;
+                max-height: 300px;
                 margin-bottom: 0px;
 		        margin-top: 40px;
             }
@@ -675,10 +699,11 @@ margin:1px;
         <div class="offices-content">
             <div class="carousel-container">
                 <div class="carousel" id="office-carousel">
-                    <img src="Carrousel_6.jpg" alt="carousel">
-		            <img src="Carrousel_2.jpg" alt="carousel">
-                    <img src="Carrousel_1.jpg" alt="carousel">
-                    <img src="Carrousel_7.jpg" alt="carousel">
+                    <img src="Carrousel_6.jpg" alt="cabinet">
+		            <img src="Carrousel_2.jpg" alt="salle operation">
+                    <img src="Carrousel_9.jpg" alt="salle operation 2">
+                    <img src="Carrousel_1.jpg" alt="preparation de materiel">
+                    <img src="Carrousel_7.jpg" alt="entrée">
                 </div>
                 <button class="carousel-button prev" onclick="prevSlide()">&#9664;</button>
 <button class="carousel-button next" onclick="nextSlide()">&#9654;</button>
@@ -697,6 +722,13 @@ margin:1px;
             </div>
         </div>
     </section>
+    <section class="video-presentation">
+        <div class="video-container">
+           
+            <iframe  src="http://www.youtube.com/embed/a7wrMSVKqqs?autoplay=1&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
 
     <section id="presentation" class="presentation">
         <div class="presentation-title">
@@ -746,7 +778,7 @@ margin:1px;
     <div class="services-content">
    <div class="service-container">
     <h4 class="centered-header">Orthodontie</h4>
-<img src="dentaire_ortho.jpg" alt="Sample Ortho">
+<img src="dentaire_ortho_alt.jpg" alt="Sample Ortho">
     <div class="folder">
         <h4 class="folder-title">Orthodontie pour enfants</h4>
         <p class="folder-content"><b>Croissance et développement des mâchoires:</b> Les traitements peuvent débuter dès l’âge de 6 ans avec des traitements interceptifs.<br><br>
@@ -841,7 +873,7 @@ Nous travaillons avec des prothésistes de proximité, ce qui permet de faire le
                 <li>Devant le cabinet nombreuses places gratuites</li>
                 <li>Places devant l’optique pont de l’arc au 124 avenue Fortuné Ferrini</li>
                 <li>Parking de la mairie au 75 route des milles Aix en Provence : deux parkings un payant et un gratuit</li>
-                <li>Parking covoiturage 2 avenue arc de meyran: attention seulement le deuxième parking sur la gauche est gratuit</li>
+                <li>Parking covoiturage Chemin de la Plaine des Dés: Covoiturage des Creps</li>
             </ul>
         </div>
     </div>
@@ -938,10 +970,18 @@ L.marker([43.51036560652942, 5.440912534962725]).addTo(map)
 L.marker([43.5095140919429, 5.438699710852258]).addTo(map) 
     .bindPopup('Parking: Route des Milles')
 
-L.marker([43.5114430343378, 5.445182526045487]).addTo(map) 
-    .bindPopup('Parking: Avenue Arc de Meyran')
+L.marker([43.51040527993837, 5.443162847815616]).addTo(map) 
+    .bindPopup('Parking: Covoiturage des Creps ')
 });
 
+// Autoplay the video
+const video = document.querySelector('.video-container video');
+
+if (video) { // Check if the video element exists
+    video.autoplay = true;
+    video.loop = true; // Optional: Loop the video
+    video.muted = true; //  Recommended for autoplay in most browsers
+}
     </script>
 </body>
 </html>
