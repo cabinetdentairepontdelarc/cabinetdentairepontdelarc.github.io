@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cabinet dentaire multidisciplinaire situé à Pont de l'arc, Aix en Provence offrant des soins complets en dentisterie générale et orthodontie. Prenez rendez-vous avec le Dr.Rochet et le Dr.Casal.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4SR59ZSDDK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-4SR59ZSDDK');
+    </script>
     <title>Cabinet dentaire pont de l'arc</title>
     <link href="https://fonts.googleapis.com/css2?family=Buenard&diplay=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" >
@@ -400,7 +409,7 @@ margin:1px;
 
 .service-container img {
     width: 80%;
-    max-height: 150px;
+    max-height: 180px;
     display: block; /* Make it a block element to center */
     margin: 20px auto; /* Center the image */
 }
@@ -460,6 +469,13 @@ margin:1px;
     object-fit: contain;
 }
 
+#retrouver .parking-info img {
+    display: block; /* Make it a block-level element */
+    margin: 5px auto; /* Center horizontally */
+    width: 80%;     /* Occupy 60% of the container's width */
+    height: auto;   /* Maintain aspect ratio */
+}
+
         /* Animation for Title */
         @keyframes slideInFromRight {
             from {
@@ -492,9 +508,10 @@ margin:1px;
         }
 
         @media (max-width: 768px) { /* Styles for smaller screens */
+            
             .video-container {
-        width: 95%; /* Take up more width on mobile */
-        height: 250px;
+            width: 95%; /* Take up more width on mobile */
+            height: 250px;
             }
 
             .entrance-content {
@@ -513,8 +530,8 @@ margin:1px;
                 max-width: 80%;
                 flex-direction: column;
                 align-items: center;
-            padding: 15px;
-            margin-top: 6px;
+                padding: 15px;
+                margin-top: 6px;
             }
 		
 	    .entrance-text h4 {
@@ -670,6 +687,7 @@ margin:1px;
     <a href="#offices">Notre cabinet</a>
     <a href="#presentation">Présentation</a>
     <a href="#services">Nos Services</a>
+    <a href="#retrouver">Nous retrouver</a>
     <a href="#contact">Nous contacter</a>
 </nav>
         <h4>Cabinet dentaire du pont de l'arc</h4>
@@ -736,7 +754,7 @@ margin:1px;
        </div>
        <div class="presentation-content">
            <div class="profile">
-               <img src="VictoireR.jpg" alt="Einstein">
+               <img src="VictoireR.jpg" alt="Victoire Rochet">
                <div class="profile-text">
                    <h2>Dr. Victoire Rochet</h2>
                    <p>Chirurgien dentiste
@@ -751,7 +769,7 @@ margin:1px;
                </div>
            </div>
            <div class="profile">
-               <img src="annesophie.jpg" alt="Einstein">
+               <img src="annesophie.jpg" alt="Anne Sophie Casals">
                <div class="profile-text">
                    <h2>Dr. Anne Sophie Casals</h2>
                    <p>Docteur en chirurgie dentaire <br> pratique limitée à l'orthodontie</p>
@@ -759,7 +777,7 @@ margin:1px;
             <ul>
            <li>Faculté d’odontologie d’Aix-Marseille</li>
            <li>Centre d’enseignement des thérapeutiques orthodontiques, orthopédiques et fonctionnelles - CETO </li>
-           <li> Attestation d’anatomie et techniques chirurgicales bucco-maxillaires</li>
+           <li>Attestation d’anatomie et techniques chirurgicales bucco-maxillaires</li>
            <li>Thèse sur les Mini-vis de traction orthodontique</li>
            
        </ul>
@@ -799,7 +817,7 @@ L’orthodontie chez l’adulte permet de corriger l’alignement dentaire pour 
 </div>
 <div class="service-container">
     <h4 class="centered-header">Dentiste générale</h4>
-  <img src="dentaire_Generale.jpg" alt="Sample Dent">
+  <img src="dentaire_Generale.jpg" alt="Siège dentaire">
     <div class="folder">
         <h4 class="folder-title">Urgences dentaires </h4>
         <p class="folder-content"><b> Douleurs et infections: </b>
@@ -842,6 +860,27 @@ Nous travaillons avec des prothésistes de proximité, ce qui permet de faire le
     </div>
 </section>
 
+<section id="retrouver" >
+    <div class="services-title">
+        <h1>Nous retrouver</h1>
+        <hr>
+    </div>
+<div class="map-container">
+    <div id="map"></div>
+    <div class="parking-info">
+        <h4>Ou se garer ?</h4>
+        
+        <ul>
+            <li>Devant le cabinet nombreuses places gratuites</li>
+            <li>Places devant l’optique pont de l’arc au 124 avenue Fortuné Ferrini</li>
+            <li>Parking de la mairie au 75 route des milles Aix en Provence : deux parkings un payant et un gratuit</li>
+            <li>Parking covoiturage Chemin de la Plaine des Dés: Covoiturage des Creps</li>
+        </ul>
+        <img src = "Parking.jpg"></img>
+    </div>
+</div>
+</section>
+
 <footer id="contact">
     <div class="footer-content">
         <h3>Contactez nous</h3>
@@ -852,7 +891,7 @@ Nous travaillons avec des prothésistes de proximité, ce qui permet de faire le
             </div>
             <div class="contact-item">
                 <img src="location.png" alt="Address">
-                <p>45 rue Pascal Fieschi, 13090</p>
+                <p>45 rue Pascal Fieschi, 13090, Aix en Provence</p>
             </div>
             <div class="contact-item">
                 <img src="mail.png" alt="Email">
@@ -864,18 +903,7 @@ Nous travaillons avec des prothésistes de proximité, ce qui permet de faire le
             </div>
         </div>
     </div>
-    <div class="map-container">
-        <div id="map"></div>
-        <div class="parking-info">
-            <h4>Ou se garer ?</h4>
-            <ul>
-                <li>Devant le cabinet nombreuses places gratuites</li>
-                <li>Places devant l’optique pont de l’arc au 124 avenue Fortuné Ferrini</li>
-                <li>Parking de la mairie au 75 route des milles Aix en Provence : deux parkings un payant et un gratuit</li>
-                <li>Parking covoiturage Chemin de la Plaine des Dés: Covoiturage des Creps</li>
-            </ul>
-        </div>
-    </div>
+   
     <div class="copyright">
         <p>&copy; 2025 Cabinet Dentaire du Pont de l'Arc</p>
     </div>
