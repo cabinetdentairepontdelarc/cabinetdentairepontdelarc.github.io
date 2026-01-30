@@ -368,8 +368,8 @@ margin:1px;
 }
 
 .profile {
-    width: 50%; /* Adjust as needed */
-    margin-bottom: 20px; /* Add vertical space between profiles */
+    width: 30%; 
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -486,6 +486,40 @@ margin:1px;
     height: auto;   /* Maintain aspect ratio */
 }
 
+/* Instagram Button Styles */
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    border-radius: 12px; /* Small rounded corners */
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white !important; /* Forces text to be white */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: none;
+    min-width: 100px;
+}
+
+.instagram-btn:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    opacity: 0.9;
+}
+
+.instagram-btn img {
+    filter: brightness(0) invert(1); /* Turns your black logo white */
+    width: 24px !important; /* Force size override */
+    height: 24px !important;
+    margin-bottom: 5px;
+}
+
+.instagram-btn span {
+    font-size: 14px;
+    font-weight: bold;
+}
         /* Animation for Title */
         @keyframes slideInFromRight {
             from {
@@ -752,8 +786,15 @@ margin:1px;
     </section>
     <section class="video-presentation">
         <div class="video-container">
-            <iframe  src="https://www.youtube.com/embed/a7wrMSVKqqs?autoplay=1&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+   <iframe 
+        src="https://www.youtube.com/embed/a7wrMSVKqqs?autoplay=1&mute=1&loop=1&playlist=a7wrMSVKqqs&controls=0" 
+        title="Presentation Cabinet" 
+        frameborder="0" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
     </section>
 
 
@@ -792,6 +833,19 @@ margin:1px;
            
        </ul>
        <a href="https://www.doctolib.fr/dentiste/marseille/anne-sophie-casals" target="_blank"><button>Prendre rendez vous</button></a>
+               </div>
+           </div>
+
+        <div class="profile">
+               <img src="HeleneL.jpg" alt="Hélène Lambert">
+               <div class="profile-text">
+                   <h2>Hélène Lambert</h2>
+                   <p>Assistante dentaire</p>
+                   <p> Formation </p>
+                   <ul>
+                       <li>Académie d'Art Dentaire Isabelle Dutel: Assistant dentaire</li>
+                       <li>IFSI Françoise Dolto - Hôpital Simone Veil: Infirmière diplômée d'état, Pratique des soins infirmiers</li>
+                   </ul>
                </div>
            </div>
        </div>
@@ -908,8 +962,10 @@ Nous travaillons avec des prothésistes de proximité, ce qui permet de faire le
                 <p>cabinetdentairepontdelarc@gmail.com</p>
             </div>
             <div class="contact-item">
-                <img src="inst.png" alt="Email">
-                <p>Prochainement</p>
+                <a href="https://www.instagram.com/cabinetdentaire_pontdelarc?igsh=MTcyZGp5bHpwZzVvcQ==" target="_blank" class="instagram-btn">
+                    <img src="inst.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
             </div>
         </div>
     </div>
@@ -1011,14 +1067,7 @@ L.marker([43.51040527993837, 5.443162847815616]).addTo(map)
     .bindPopup('Parking: Covoiturage des Creps ')
 });
 
-// Autoplay the video
-const video = document.querySelector('.video-container video');
 
-if (video) { // Check if the video element exists
-    video.autoplay = true;
-    video.loop = true; // Optional: Loop the video
-    video.muted = true; //  Recommended for autoplay in most browsers
-}
     </script>
 </body>
 </html>
